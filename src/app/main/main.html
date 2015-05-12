@@ -26,7 +26,11 @@
     </div>
     <div class="col-md-4">
       <h2><u>Exercises</u></h2>
-
+      <ul class="list-unstyled">
+        <li ng-repeat="exercise in exercises">
+          {{ exercise.title }}
+        </li>
+      </ul>
     </div>
   </div>
 

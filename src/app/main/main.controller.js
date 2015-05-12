@@ -62,6 +62,33 @@ angular.module('soliloquy')
         id: 7,
         title: "Adjectives"
       }
+    ];
+
+    $scope.exercises = [
+      {
+        id: 1,
+        title: "exercise 1"
+      },
+      {
+        id: 2,
+        title: "exercise 2"
+      },
+      {
+        id: 3,
+        title: "exercise 3"
+      },
+      {
+        id: 4,
+        title: "exercise 4"
+      },
+      {
+        id: 5,
+        title: "exercise 5"
+      },
+      {
+        id: 6,
+        title: "exercise 6"
+      },
 
     ];
 
