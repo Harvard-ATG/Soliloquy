@@ -10,7 +10,11 @@
   <div class="row">
     <div class="col-md-4 right-col-line">
       <h2><u>Courses</u></h2>
-
+      <ul class="list-unstyled">
+        <li ng-repeat="course in courses">
+          {{ course.title }}
+        </li>
+      </ul>
     </div>
     <div class="col-md-4 right-col-line">
       <h2><u>Collections</u></h2>
@@ -22,6 +26,7 @@
     </div>
   </div>
 
+  <!--
   <div class="row">
     <div class="col-sm-6 col-md-4" ng-repeat="awesomeThing in awesomeThings | orderBy:'rank'">
       <div class="thumbnail">
@@ -34,11 +39,12 @@
       </div>
     </div>
   </div>
+  -->
 
   <hr>
 
   <div class="footer">
-    <p>With ♥ from <a href="https://twitter.com/Swiip">@Swiip</a></p>
+    <p>With ♥ from <a href="https://github.com/Harvard-ATG">Harvard</a></p>
   </div>
 
 </div>

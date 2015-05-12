@@ -2,6 +2,28 @@
 
 angular.module('soliloquy')
   .controller('MainCtrl', function ($scope) {
+    $scope.courses = [
+      {
+        title: "All"
+      },
+      {
+        title: "Russian 1A"
+      },
+      {
+        title: "Chinese 1B"
+      },
+      {
+        title: "Itallian 22"
+      },
+      {
+        title: "French 33"
+      },
+      {
+        title: "German 44"
+      },
+    ];
+
+/*
     $scope.awesomeThings = [
       {
         'title': 'AngularJS',
@@ -61,4 +83,5 @@ angular.module('soliloquy')
     angular.forEach($scope.awesomeThings, function(awesomeThing) {
       awesomeThing.rank = Math.random();
     });
+    */
   });
