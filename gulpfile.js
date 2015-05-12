@@ -3,7 +3,6 @@
 var gulp = require('gulp');
 var gutil = require('gulp-util');
 var wrench = require('wrench');
-var connect = require('gulp-connect');
 
 var options = {
   src: 'src',
@@ -28,10 +27,6 @@ wrench.readdirSyncRecursive('./gulp').filter(function(file) {
   require('./gulp/' + file)(options);
 });
 
-gulp.task('webserver', function(){
-    connect.server();
-});
-
-gulp.task('default', ['clean', 'webserver'], function () {
+gulp.task('default', ['clean'], function () {
     gulp.start('build');
 });
