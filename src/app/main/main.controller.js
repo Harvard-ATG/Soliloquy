@@ -4,23 +4,65 @@ angular.module('soliloquy')
   .controller('MainCtrl', function ($scope) {
     $scope.courses = [
       {
+        id: undefined,
         title: "All"
       },
       {
+        id: 1,
         title: "Russian 1A"
       },
       {
+        id: 2,
         title: "Chinese 1B"
       },
       {
+        id: 3,
         title: "Itallian 22"
       },
       {
+        id: 4,
         title: "French 33"
       },
       {
+        id: 5,
         title: "German 44"
+      }
+    ];
+
+    $scope.collections = [
+      {
+        id: undefined,
+        title: "All"
       },
+      {
+        id: 1,
+        title: "Week 1"
+      },
+      {
+        id: 2,
+        title: "Week 2"
+      },
+      {
+        id: 3,
+        title: "Week 3"
+      },
+      {
+        id: 4,
+        title: "Week 4"
+      },
+      {
+        id: 5,
+        title: "Nouns"
+      },
+      {
+        id: 6,
+        title: "Verbs"
+      },
+      {
+        id: 7,
+        title: "Adjectives"
+      }
+
     ];
 
 /*

@@ -18,7 +18,11 @@
     </div>
     <div class="col-md-4 right-col-line">
       <h2><u>Collections</u></h2>
-
+      <ul class="list-unstyled">
+        <li ng-repeat="collection in collections">
+          {{ collection.title }}
+        </li>
+      </ul>
     </div>
     <div class="col-md-4">
       <h2><u>Exercises</u></h2>
