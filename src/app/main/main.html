@@ -11,8 +11,16 @@
     <div class="col-md-4 right-col-line">
       <h2><u>Courses</u></h2>
       <ul class="list-unstyled">
-        <li ng-repeat="course in courses">
-          {{ course.title }}
+        <li ng-repeat="course in courses" ng-model="current_course">
+          <button type="button"
+                  class="btn btn-default btn-sm btn-block"
+                  ng-class="course.id == current_course.id ? 'btn-primary' : ''"
+                  ng-click="current_course.id = course.id"
+          >
+            <span class="glyphicon glyphicon-menu-hamburger pull-left" aria-hidden="true"></span>
+            {{ course.title }}
+            <span class="glyphicon glyphicon-cog pull-right" aria-hidden="true"></span>
+          </button>
         </li>
       </ul>
     </div>
@@ -20,7 +28,16 @@
       <h2><u>Collections</u></h2>
       <ul class="list-unstyled">
         <li ng-repeat="collection in collections">
-          {{ collection.title }}
+          <button type="button"
+                  class="btn btn-sm btn-default btn-lg btn-block"
+                  ng-class="collection.id == current_collection_id ? 'btn-primary' : ''"
+                  ng-click="current_collection_id = collection.id"
+          >
+            <span class="glyphicon glyphicon-menu-hamburger pull-left" aria-hidden="true"></span>
+            {{ collection.title }}
+            <span class="glyphicon glyphicon-cog pull-right" aria-hidden="true"></span>
+          </button>
+          <!-- <span class="glyphicon glyphicon-cog pull-right" aria-hidden="true"></span> -->
         </li>
       </ul>
     </div>
@@ -28,7 +45,11 @@
       <h2><u>Exercises</u></h2>
       <ul class="list-unstyled">
         <li ng-repeat="exercise in exercises">
-          {{ exercise.title }}
+          <button type="button" class="btn btn-sm btn-default btn-lg btn-block">
+            <span class="glyphicon glyphicon-menu-hamburger pull-left" aria-hidden="true"></span>
+            {{ exercise.title }}
+            <span class="glyphicon glyphicon-cog pull-right" aria-hidden="true"></span>
+          </button>
         </li>
       </ul>
     </div>
