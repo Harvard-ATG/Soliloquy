@@ -85,7 +85,24 @@
         <div class="col-md-6">
             <h2>Users</h2>
             <div class="well">
-
+                <table class="table table-striped">
+                    <thead>
+                        <tr>
+                            <th>Name</th>
+                            <th>Logins</th>
+                            <th>Last Login</th>
+                            <th>Actions</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr ng-repeat="user in users">
+                            <td>{{user.name}}</td>
+                            <td>{{user.logins}}</td>
+                            <td>{{user.lastLogin}}</td>
+                            <td>{{user.action}}</td>
+                        </tr>
+                    </tbody>
+                </table>
             </div>
         </div>
     </div>
