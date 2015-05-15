@@ -1,0 +1,115 @@
+<div class="container">
+
+    <div ng-include="'app/components/navbar/navbar.html'"></div>
+
+    <div class="page-header">
+        <h1>Manage Course</h1>
+    </div>
+
+    <div class="row">
+        <div class="col-md-6">
+            <h2>Course Information</h2>
+            <div class="well">
+                <form class="form-horizontal">
+                    <div class="form-group">
+                        <label for="title" class="control-label col-md-4">Name</label>
+                        <div class="col-md-8">
+                            <input type="text" class="form-control" id="title" placeholder="Course Name">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="defaultCollection" class="control-label col-md-4">Default Collection</label>
+                        <div class="col-md-8">
+                            <select id="defaultCollection" class="form-control">
+                                <option>1</option>
+                                <option>2</option>
+                                <option>3</option>
+                                <option>4</option>
+                                <option>5</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <div class="checkbox col-md-12">
+                            <label for="defaultPublish">
+                                <input type="checkbox" id="defaultPublish"> Publish exercises by default
+                            </label>
+                        </div>
+                    </div>
+                    <div class="text-center">
+                        <button type="submit" class="btn btn-default">Save</button>
+                        <button type="button" class="btn btn-default">Cancel</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+        <div class="col-md-6">
+            <h2>Collections</h2>
+            <div class="well">
+                <form class="form-horizontal">
+                    <div class="form-group">
+                        <textarea class="form-control" rows="5"></textarea>
+                    </div>
+                    <div class="text-center">
+                        <button type="submit" class="btn btn-default">Collection Name...</button>
+                        <button type="button" class="btn btn-default">Add Collection</button>
+                    </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-md-6">
+            <h2>Course Addons</h2>
+            <div class="well">
+                <div class="form-group">
+                    <div>LTI Integration</div>
+                    <label class="radio-inline">
+                        <input type="radio" name="ltiIntegrationOptions" id="ltiIntegrationEnabled" value="1"> Enabled
+                    </label>
+                    <label class="radio-inline">
+                        <input type="radio" name="inlineRadioOptions" id="ltiIntegrationDisabled" value="0"> Disabled
+                    </label>
+                </div>
+                <div class="form-group">
+                    <div>Integration with Canvas LMS Assignments API</div>
+                    <label class="radio-inline">
+                        <input type="radio" name="canvasAssignmentIntegrationOptions" id="canvasAssignmentIntegrationEnabled" value="1"> Enabled
+                    </label>
+                    <label class="radio-inline">
+                        <input type="radio" name="canvasAssignmentIntegrationOptions" id="canvasAssignmentIntegrationDisabled" value="0"> Disabled
+                    </label>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-6">
+            <h2>Users</h2>
+            <div class="well">
+                <table class="table table-striped">
+                    <thead>
+                        <tr>
+                            <th>Name</th>
+                            <th>Logins</th>
+                            <th>Last Login</th>
+                            <th>Actions</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr ng-repeat="user in users">
+                            <td>{{user.name}}</td>
+                            <td>{{user.logins}}</td>
+                            <td>{{user.lastLogin}}</td>
+                            <td>{{user.action}}</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+
+
+    <div class="footer">
+        <p>With ♥ from <a href="https://github.com/Harvard-ATG">Harvard</a></p>
+    </div>
+
+</div>
