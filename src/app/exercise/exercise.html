@@ -6,7 +6,39 @@
         <h1>Create Exercise</h1>
     </div>
 
-    something
+    <div class="well">
+        <form class="form-horizontal">
+            <div class="row form-group">
+                <label for="title" class="control-label col-md-3">Name</label>
+                <div class="col-md-4">
+                    <input type="text" class="form-control" id="title" placeholder="Exercise Name">
+                </div>
+            </div>
+            <div class="row form-group">
+                <label for="prompt" class="control-label col-md-3">Prompt</label>
+                <div class="col-md-4">
+                    <textarea id="prompt" class="form-control" rows="5"></textarea>
+                </div>
+            </div>
+            <div class="row form-group">
+                <label for="audio" class="control-label col-md-3">Audio</label>
+                <div class="col-md-4">
+                    <div class="btn-group" data-toggle="buttons">
+                        <label for="record" class="btn btn-primary" ng-click="audioType = 'record'" ng-class="{ 'active' : audioType == 'record' }">
+                            <input type="radio" name="audioOpts" id="record" autocomplete="off" ng-checked="audioType == 'record'"> Record
+                        </label>
+                        <label for="upload" class="btn btn-primary" ng-click="audioType = 'upload'" ng-class="{ 'active' : audioType == 'upload' }">
+                            <input type="radio" name="audioOpts" id="upload" autocomplete="off" ng-checked="audioType == 'upload'"> Upload
+                        </label>
+                        <label for="url" class="btn btn-primary" ng-click="audioType = 'url'" ng-class="{ 'active' : audioType == 'url' }">
+                            <input type="radio" name="audioOpts" id="url" autocomplete="off" ng-checked="audioType == 'url'"> URL
+                        </label>
+                    </div>
+                </div>
+            </div>
+
+        </form>
+    </div>
 
     <div class="footer">
         <p>With ♥ from <a href="https://github.com/Harvard-ATG">Harvard</a></p>
