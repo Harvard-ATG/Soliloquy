@@ -3,7 +3,7 @@
 angular.module('soliloquy')
   .controller('MainCtrl', function ($scope) {
     $scope.current_course_id = null;
-    $scope.current_collection_id = null;
+    $scope.current_collection_id = 0;
 
     $scope.courses = [
       {
@@ -168,27 +168,36 @@ angular.module('soliloquy')
       }
     };
     $scope.collectionClass = function(collection){
-      if($scope.current_collection_id == collection.id){
-        if(collection.id == null){
-          console.log(collection);
-/*
-          if(collection.exercises.length == 0){
-            $scope.courses.forEach(function (crs) {
-              if (crs.collections) {
-                crs.collections.forEach(function(col){
-                  collection.exercises = collection.exercises.concat(col.exercises);
-                });
-              }
+      if(collection) {
+        if($scope.current_collection_id == collection.id){
+          $scope.exercises = collection.exercises;
+          return 'btn-primary';
+        } else {
+          return '';
+        }
+      } else {
+        if($scope.current_collection_id == 0){
+          return 'btn-primary';
+        }
+      }
+
+    };
+    $scope.collectionClick = function(id){
+      // TODO: refactor this out and put it into an ng-init as well as a click
+      $scope.current_collection_id = id;
+      if($scope.current_collection_id == 0){
+        // get all exercises for the current course
+        $scope.courses.forEach(function(crs){
+          if(crs.id == $scope.current_course_id){
+            $scope.exercises = [];
+            crs.collections.forEach(function(col){
+              //$scope.exercises.concat(col.exercises);
             });
           }
-*/
-        }
-        $scope.exercises = collection.exercises;
-        return 'btn-primary';
-      } else {
-        return '';
+        });
       }
     };
+
 
 
 

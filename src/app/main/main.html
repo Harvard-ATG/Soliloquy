@@ -35,6 +35,15 @@
       <h2><u>Collections</u></h2>
       <ul class="list-unstyled">
         <li ng-if="!collections">No collections</li>
+        <li ng-if="collections.length > 1">
+          <button type="button"
+                  class="btn btn-sm btn-default btn-lg btn-block"
+                  ng-class="collectionClass()"
+                  ng-click="collectionClick(0)"
+          >
+            All
+          </button>
+        </li>
         <li ng-repeat="collection in collections">
           <button type="button"
                   class="btn btn-sm btn-default btn-lg btn-block"
