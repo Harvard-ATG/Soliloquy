@@ -11,6 +11,10 @@ angular.module('soliloquy', ['ngAnimate', 'ngCookies', 'ngTouch', 'ngSanitize', 
         templateUrl: 'app/course/course.html',
         controller: 'CourseCtrl'
       })
+      .when('/exercise', {
+        templateUrl: 'app/exercise/exercise.html',
+        controller: 'ExerciseCtrl'
+      })
       .otherwise({
         redirectTo: '/'
       });
