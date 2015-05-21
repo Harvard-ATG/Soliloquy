@@ -15,7 +15,6 @@
     </div>
   </div>
 
-
   <div class="row">
     <div class="col-md-4 right-col-line">
       <h2><u>Courses</u></h2>
@@ -24,8 +23,7 @@
           <button type="button"
                   class="btn btn-default btn-sm btn-block"
                   ng-class="courseClass(course)"
-                  ng-click="$parent.current_course_id = course.id"
-          >
+                  ng-click="$parent.current_course_id = course.id">
             <span class="glyphicon glyphicon-menu-hamburger pull-left" aria-hidden="true"></span>
             {{ course.title }}
             <span class="glyphicon glyphicon-cog pull-right" aria-hidden="true"></span>
@@ -36,23 +34,24 @@
     <div class="col-md-4 right-col-line">
       <h2><u>Collections</u></h2>
       <ul class="list-unstyled">
+        <li ng-if="!collections">No collections</li>
         <li ng-repeat="collection in collections">
           <button type="button"
                   class="btn btn-sm btn-default btn-lg btn-block"
-                  ng-class="collectionClass(collection.id)"
+                  ng-class="collectionClass(collection)"
                   ng-click="$parent.current_collection_id = collection.id"
           >
             <span class="glyphicon glyphicon-menu-hamburger pull-left" aria-hidden="true"></span>
             {{ collection.title }}
             <span class="glyphicon glyphicon-cog pull-right" aria-hidden="true"></span>
           </button>
-          <!-- <span class="glyphicon glyphicon-cog pull-right" aria-hidden="true"></span> -->
         </li>
       </ul>
     </div>
     <div class="col-md-4">
       <h2><u>Exercises</u></h2>
       <ul class="list-unstyled">
+        <li ng-if="!exercises">No exercises</li>
         <li ng-repeat="exercise in exercises">
           <button type="button" class="btn btn-sm btn-default btn-lg btn-block">
             <span class="glyphicon glyphicon-menu-hamburger pull-left" aria-hidden="true"></span>
@@ -63,21 +62,6 @@
       </ul>
     </div>
   </div>
-
-  <!--
-  <div class="row">
-    <div class="col-sm-6 col-md-4" ng-repeat="awesomeThing in awesomeThings | orderBy:'rank'">
-      <div class="thumbnail">
-        <img class="pull-right" ng-src="assets/images/{{awesomeThing.logo}}" alt="{{awesomeThing.title}}">
-        <div class="caption">
-          <h3>{{awesomeThing.title}}</h3>
-          <p>{{awesomeThing.description}}</p>
-          <p><a ng-href="{{awesomeThing.url}}">{{awesomeThing.url}}</a></p>
-        </div>
-      </div>
-    </div>
-  </div>
-  -->
 
   <hr>
 
